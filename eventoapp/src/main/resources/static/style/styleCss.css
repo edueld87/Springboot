@@ -1,0 +1,64 @@
+.detalhesEvento{
+	box-shadow: 0px 0px 5px grey;
+	margin-top: 80px;
+	padding-top: 20px;
+	padding-left: 20px;
+	margin-bottom: 60px;
+}
+.formConvidado{
+	box-shadow: 0px 0px 5px grey;
+	margin-top: 80px;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	margin-bottom: 60px;
+}
+.tabelaConvidado{
+	width: 50%;
+	box-shadow: 0px 0px 5px grey;
+	margin-top: 80px;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	margin-bottom: 60px;
+	
+}
+
+.formEvento{
+	box-shadow: 0px 0px 5px grey;
+	margin-top: 80px;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	margin-bottom: 60px;
+}
+
+h5{
+    text-align: center;
+    color: #0F110C;   
+}
+
+.formEvento{
+	box-shadow: 0px 0px 5px grey;
+	margin-top: 80px;
+	padding-top: 30px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	margin-bottom: 60px;
+}
+nav {
+	background: #150C71
+}
+
+.btn{
+	background: #757575
+}
+
+a.waves-effect.waves-light.btn, button.waves-effect.waves-light.btn {
+    color: #CECCCC;
+    background: #757575;
+	}
+
+h1{
+    text-align: center;
+}	

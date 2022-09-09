@@ -33,11 +33,16 @@ public class EventoController {
 	}
 		
 	@RequestMapping(value = "/cadastrarEvento", method= RequestMethod.POST)
-	public String form(Evento evento) {
-	er.save(evento);
-	return "redirect:/cadastrarEvento";
+	public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes) {
+		if(result.hasErrors()) {
+	        attributes.addFlashAttribute("mensagem", "Verifique os campos!");
+	    	return "redirect:/cadastrarEvento";
 
 	}
+		er.save(evento);
+		attributes.addFlashAttribute("mensagem", "Salvo com sucesso!");	
+		return "redirect:/cadastrarEvento";
+	}		
 	
 	@RequestMapping("/eventos")	
 	public ModelAndView listaEventos(){		
@@ -74,6 +79,26 @@ public class EventoController {
 	    attributes.addFlashAttribute("mensagem", "Convidado adicionado com sucesso!");
 	    return "redirect:/{codigo}";
 	}
-		
+	
+	@RequestMapping("/deletarEvento")
+	public String deletarEvento(long codigo) {
+		Evento evento = er.findByCodigo(codigo);
+		er.delete(evento);
+		return "redirect:/eventos";
+	}
+	
+	@RequestMapping("/deletarConvidado")
+    public String deletarConvidado(String rg) {
+        Convidado convidado = cr.findByRg(rg);
+        cr.delete(convidado);
+        
+        Evento evento =  convidado.getEvento();
+        long codigoLong = evento.getCodigo();
+        String codigo = "" + codigoLong;
+        
+        return "redirect:/" + codigo ;    
+        
+    }
+	
 }
 

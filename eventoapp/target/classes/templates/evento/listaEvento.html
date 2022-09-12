@@ -33,6 +33,7 @@
 		<th>Data</th>
 		<th>Horário</th>
 		<th>Deletar</th>
+		<th>Editar</th>
 	</thead>	
 	<tbody>
 	<tr th:each="evento : ${leventos}">	 
@@ -41,6 +42,7 @@
 			<td><span th:text= "${evento.data}"></span></td>
 			<td><span th:text= "${evento.horario}"></span></td>
 			<td><span><a th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}"><i class="material-icons left">delete</i></a></span></td>
+			<td><span><a th:href="${(#mvc.url('EC#editarEvento').arg(0, evento.codigo)).build()}"><i class="material-icons left">edit</i></a></span></td>
 		</tr>
 	</tbody>
 	</table>

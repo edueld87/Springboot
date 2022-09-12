@@ -52,7 +52,8 @@
 	                <tr>
 	                    <th>Nome convidado:</th>
 	                    <th>Rg:</th>
-	                    <th>Deletar:</th>
+	                    <th>Deletar</th>
+	                    <th>Editar</th>
 	                </tr>
 	            </thead>
 	            <tbody>
@@ -62,8 +63,10 @@
 	                    <td><a class="waves-effect waves-light btn.small"
 	                        th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidados.rg)).build()}"><i
 	                            class="material-icons left">delete</i></a></td>
-	                            
-	                </tr>
+	                    <td><a class="waves-effect waves-light btn.small"
+	                        th:href="${(#mvc.url('EC#editarConvidados').arg(0, convidados.rg)).build()}"><i
+	                            class="material-icons left">edit</i></a></td>        
+	                    </tr>
 	            </tbody>
 	        </table>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

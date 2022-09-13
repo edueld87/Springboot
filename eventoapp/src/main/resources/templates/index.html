@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<meta charset="UTF-8">
-<title>Aplicação Spring</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="style/styleCss.css"/>
+
+<meta charset="UTF-8"> 
+<title>EventosApp</title>
 </head>
 <body>
-	<h1>Primeira Página com Spring Boot</h1>
+   <header>
+	<nav>
+	    <div class="nav-wrapper">
+	      <a href="#" class="brand-logo">Lista de Eventos</a>
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	        <li><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a>
+	         </ul>	
+	    </div>
+	  </nav>
+	  </header>
+	<h1><b>Bem-vindo ao Sistema para cadastro de Eventos =)</b></h1>
+	<h3>Faça seu Login e cadastre seus eventos e listas de convidados</h3>
+	
+	<center>
+	<img width="700" height="400" "https://lets.events/blog/wp-content/uploads/2017/09/top-da-balada-o-que-faz-uma-balada-ter-sucesso.jpeg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://lets.events/blog/wp-content/uploads/2017/09/top-da-balada-o-que-faz-uma-balada-ter-sucesso.jpeg 1000w, https://lets.events/blog/wp-content/uploads/2017/09/top-da-balada-o-que-faz-uma-balada-ter-sucesso-300x200.jpeg 300w, https://lets.events/blog/wp-content/uploads/2017/09/top-da-balada-o-que-faz-uma-balada-ter-sucesso-768x513.jpeg 768w"  
+	sizes="(max-width: 1000px) 100vw, 1000px" align="middle">
+	</center>
+	<!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
 </html>

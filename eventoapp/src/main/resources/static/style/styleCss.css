@@ -4,6 +4,7 @@
 	padding-top: 20px;
 	padding-left: 20px;
 	margin-bottom: 60px;
+	
 }
 .formConvidado{
 	box-shadow: 0px 0px 5px grey;
@@ -12,6 +13,7 @@
 	padding-left: 20px;
 	padding-bottom: 10px;
 	margin-bottom: 60px;
+	
 }
 .tabelaConvidado{
 	width: 50%;
@@ -31,6 +33,7 @@
 	padding-left: 20px;
 	padding-bottom: 10px;
 	margin-bottom: 60px;
+	
 }
 
 h5{
@@ -47,11 +50,11 @@ h5{
 	margin-bottom: 60px;
 }
 nav {
-	background: #150C71
+	background: #150C71;
 }
 
 .btn{
-	background: #757575
+	background: #757575;
 }
 
 a.waves-effect.waves-light.btn, button.waves-effect.waves-light.btn {
@@ -71,6 +74,7 @@ h1, h3{
 	padding-top: 20px;
 	padding-left: 20px;
 	margin-bottom: 60px;
+	
 }	
 
 .index{
@@ -81,4 +85,5 @@ h1, h3{
 	padding-left: 20px;
 	padding-bottom: 30px;
 	margin-bottom: 60px;
+	
 }

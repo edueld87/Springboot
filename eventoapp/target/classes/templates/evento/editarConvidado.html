@@ -1,15 +1,15 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 	<htmlxmlns:th="http://thymeleaf.org"
 		  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
 		 <!--Import Google Icon Font-->
 	      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 	      <!--Import materialize.css-->
-	      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+	      <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
 	
 	      <!--Let browser know website is optimized for mobile-->
 	      <meta charset=UTF-8 "viewport" content="width=device-width, initial-scale=1.0"/>
-	      <link rel="stylesheet" href="style/styleCss.css"/>
+	      <link rel="stylesheet" href="/style/styleCss.css"/>
 	      
 	<title>EventoApp</title>
 	</head>
@@ -28,7 +28,7 @@
 		  </nav>
 		  </header>
 	
-	<h1>Evento</h1>
+	<h1><b>Evento</b></h1>
 	
 	<!-- <div th:each="evento : ${evento}" class="container detalhesEvento"> -->
 	<div class="container detalhesEvento">
@@ -43,9 +43,9 @@
 			<th:block th:include="evento/mensagemValidacao"></th:block>
 		<div class = "container formConvidado">
 		<form method="post">
-			    Nome: <input type="text" value="" name="nomeConvidado"/>
-	            Rg: <input type="text" value="" name="rg"/>
-	            <button class="waves-effect waves-light btn" type="submit">Adicionar convidado</button>
+			    Nome: <input type="text" th:value= "${convidado.nomeConvidado}" name="nomeConvidado" required/>
+	            <p>Rg: <span type="text" th:text="${convidado.rg}"></spam></p>
+	            <button class="waves-effect waves-light btn" type="submit">Salvar</button>
 	    </form>
 	   </div>	 
 	    
@@ -67,12 +67,12 @@
 	                        th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidados.rg)).build()}"><i
 	                            class="material-icons left">delete</i></a></td>
 	                     <td><a class="waves-effect waves-light btn.small"
-	                        th:href="${(#mvc.url('EC#editarConvidado').arg(0, evento.codigo).arg(1, convidados.rg)).build()}"><i
+	                        th:href="${(#mvc.url('EC#editarConvidado').arg(0, convidados.rg)).build()}"><i
 	                            class="material-icons left">edit</i></a></td>   
 	                    </tr>
 	            </tbody>
 	        </table>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
 	</body>
 	</html>

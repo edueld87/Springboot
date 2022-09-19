@@ -130,17 +130,32 @@ public class EventoController {
 	
 	// editar convidados
 	
-//	@RequestMapping(value ="/editar{codigo}", method = RequestMethod.GET)
-//	public ModelAndView editarConvidados(@PathVariable("codigo") long codigo) {
-//		Evento evento = er.findByCodigo(codigo);
-//		ModelAndView mv = new ModelAndView("evento/editarConvidados");
-//		mv.addObject("evento", evento);
-//
-////		Iterable<Convidado> convidados = cr.findByEvento(evento);
-////		mv.addObject("convidados", convidados);
-//		return mv;
-//	}
-//
+	@RequestMapping(value ="editarConvidado/{codigo}/{rg}", method = RequestMethod.GET)
+	public ModelAndView editarConvidado(@PathVariable("codigo") long codigo, @PathVariable("rg") String rg) {
+		
+		Evento evento =  er.findByCodigo(codigo);
+		ModelAndView mv = new ModelAndView("evento/editarConvidado");
+		
+		Convidado convidado = cr.findByRg(rg);
+		mv.addObject("evento", evento);
+		mv.addObject("convidado", convidado);
+		
+		return mv;
+		
+}
+	
+	@RequestMapping(value ="editarConvidado/{codigo}/{rg}", method = RequestMethod.POST)
+	public String editarConvidadoPost(@PathVariable("codigo") long codigo, @PathVariable("rg") String rg, Convidado convidado) {
+		
+		Evento evento = er.findByCodigo(codigo);
+		convidado.setEvento(evento);
+		cr.save(convidado);
+		
+		return "redirect:/{codigo}";
+	}
+
+	       
+	    
 //	@RequestMapping(value ="/editar{codigo}", method = RequestMethod.POST)
 //	public String editarConvidadosPost(@PathVariable("codigo") long codigo, @Valid Convidado convidado, BindingResult result,
 //			RedirectAttributes attributes) {
@@ -154,5 +169,5 @@ public class EventoController {
 //		return "redirect:/editar{codigo}";
 //
 //	
-//	}
-}
+	}
+
